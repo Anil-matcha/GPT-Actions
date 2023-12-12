@@ -1,0 +1,95 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "Greeting API Integration",
+      "version": "1.0.0",
+      "description": "API integration for fetching random greetings."
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000"
+      }
+    ],
+    "paths": {
+      "/get_greeting": {
+        "get": {
+          "operationId": "getRandomGreeting",
+          "summary": "Get a random greeting",
+          "description": "Fetches a random greeting from the Greeting API.",
+          "responses": {
+            "200": {
+              "description": "Successful response with a random greeting",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "greeting": {
+                        "type": "string",
+                        "description": "The random greeting."
+                      }
+                    },
+                    "required": ["greeting"]
+                  }
+                }
+              }
+            },
+            "400":{
+              "description": "Error with Authentication",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "description": "The error occurred."
+                      }
+                    },
+                    "required": ["error"]
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Unexpected error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      }
+    },
+    "security": [
+      {
+        "basicAuth": []
+      }
+    ]
+  }
