@@ -56,3 +56,7 @@ python webserver.py
 ```
 
 Use ngrok to test on a https endpoint
+
+### Hosted version of GPT Auth
+
+If you don't want to setup locally and wish to use a hosted version, you can start from https://gpt-auth.thesamur.ai/
