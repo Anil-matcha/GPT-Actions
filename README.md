@@ -8,7 +8,7 @@
 
 **GPT Auth** provides a user-friendly solution to quickly setup oauth for your custom GPT and self-host it.
 
-[Demo Video](https://github.com/Anil-matcha/GPT-Auth/assets/4326215/5f0a15a3-a322-47ad-af33-564210d887c3)
+[Demo Video](https://github.com/Anil-matcha/GPT-Auth/assets/4326215/dce1fb43-d64b-496f-ab79-a2e67c84d7c1)
 
 ## Key Features 🎯
 
